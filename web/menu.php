@@ -80,6 +80,7 @@ catch (PDOException $ex)
 
 	<div class="navbar">
 		<a href="main.php">Login</a>
+  		<a href="menu.php">Gallery</a>
   		<a href="cart.php">Cart</a>
 	</div>
 	<br>
