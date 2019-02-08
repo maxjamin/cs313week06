@@ -50,7 +50,7 @@
 		}
 	?>
 
-	<form>
+	<form method="post" action="insertUser.php">
 		Name: <input type="text" name="name"><br>
 		Email: <input type="text" name="email"><br>
 		<input type="submit">
