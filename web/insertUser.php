@@ -8,8 +8,9 @@
 <body>
 <?php 
 
-	$course_id = htmlspecialchars($_POST['name']);
-	$course_id = htmlspecialchars($_POST['email']);
+	$customerName= htmlspecialchars($_POST['name']);
+	$customerEmail = htmlspecialchars($_POST['email']);
+	$customerPass = htmlspecialchars($_POST['password']);
 
 	try
 	{
@@ -32,8 +33,15 @@
 	  die();
 	}
 
+	$stmt = $db->prepare('INSERT INTO Customers(userName, email, login) VALUES (:customerName, :customerEmail, :customerPass);');
+	$stmt->bindValue(':customerName', $customerName, PDO::PARAM_INT);
+	$stmt->bindValue(':customerEmail', $customerEmail, PDO::PARAM_INT);
+	$stmt->bindValue(':customerPass', $customerPass, PDO::PARAM_INT);
+	$stmt->execute();
 
-
+	$new_page = "main.php";
+	header("Location: $new_page");
+	die();
 ?>
 
 
