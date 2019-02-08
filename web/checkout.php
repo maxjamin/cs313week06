@@ -31,13 +31,13 @@ try
   	$user = $_SESSION["sessionUserName"];
 
 	//find the user in the DB
-	/*$stmt = $db->prepare('SELECT * FROM Customer WHERE userName=:id');
+	$stmt = $db->prepare('SELECT * FROM Customer WHERE username=:id');
 	$stmt->bindValue(':id', $user, PDO::PARAM_STR);
 	$stmt->execute();
 	$note_rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-	echo . 'Answer ' . $note_rows['userName'];
+	echo . 'Answer ' . $note_rows;
 
-	*/	
+	
 
 
 

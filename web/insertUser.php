@@ -26,9 +26,9 @@
 	}
 
 	$stmt = $db->prepare('INSERT INTO Customer(userName, email, login) VALUES (:customerName, :customerEmail, :customerPass);');
-	$stmt->bindValue(':customerName', $customerName, PDO::PARAM_INT);
-	$stmt->bindValue(':customerEmail', $customerEmail, PDO::PARAM_INT);
-	$stmt->bindValue(':customerPass', $customerPass, PDO::PARAM_INT);
+	$stmt->bindValue(':customerName', $customerName, PDO::PARAM_STR);
+	$stmt->bindValue(':customerEmail', $customerEmail, PDO::PARAM_STR);
+	$stmt->bindValue(':customerPass', $customerPass, PDO::PARAM_STR);
 	$stmt->execute();
 
 	$new_page = "main.php";
