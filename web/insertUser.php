@@ -1,11 +1,3 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>05 Prove</title>
-	<meta charset="UTF-8">
-	<link rel = "stylesheet" type = "text/css" href = "myStyle.css" />
-</head>
-<body>
 <?php 
 
 	$customerName= htmlspecialchars($_POST['name']);
@@ -43,7 +35,3 @@
 	header("Location: $new_page");
 	die();
 ?>
-
-
-</body>
-</html> 
