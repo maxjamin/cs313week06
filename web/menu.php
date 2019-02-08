@@ -107,7 +107,7 @@ catch (PDOException $ex)
 				"</td><td>" . $table['description'] .
 				"</td><td>" . "<img src=$image width='150' height='150'>" .
 				"</td><td>" . $table['price'] .
-				"</td><td>" . $table['quantity'] - $_SESSION[$amount] .
+				"</td><td>" . $table['quantity'] .
 				"</td><td>";
 				?>
 				<form id = "table" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
