@@ -1,4 +1,12 @@
-<php 
+<!DOCTYPE html>
+<html>
+<head>
+<title>05 Prove</title>
+	<meta charset="UTF-8">
+	<link rel = "stylesheet" type = "text/css" href = "myStyle.css" />
+</head>
+<body>
+<?php 
 
 	$course_id = htmlspecialchars($_POST['name']);
 	$course_id = htmlspecialchars($_POST['email']);
@@ -24,6 +32,10 @@
 	  die();
 	}
 
-	
+
 
 ?>
+
+
+</body>
+</html> 
