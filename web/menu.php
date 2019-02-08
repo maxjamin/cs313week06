@@ -99,15 +99,13 @@ catch (PDOException $ex)
 			$id = $table['artwork_id'];
 			$names = $table['name'];
 			//"<img src='artWorkImages/weather.jpeg' >"
-
 			$quantity = $_SESSION[$names . 'amount'];
-			echo $quantity . ' ';
 
 			echo '<tr><td>' .  $table['name'] .
 				"</td><td>" . $table['description'] .
 				"</td><td>" . "<img src=$image width='150' height='150'>" .
 				"</td><td>" . $table['price'] .
-				"</td><td>" . $table['quantity']  .
+				"</td><td>" . $table['quantity'] - $quantity .
 				"</td><td>";
 				?>
 				<form id = "table" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
