@@ -40,7 +40,33 @@ catch (PDOException $ex)
 			echo "User Email: " . $_SESSION["sessionUserEmail"] . '<br><br>';
 		}
 
-		//grab from pssql to table
+
+
+?>
+	<h1>Gallery</h1>
+	<br>
+
+	<div class="navbar">
+		<a href="main.php">Login</a>
+  		<a href="menu.php">Gallery</a>
+  		<a href="cart.php">Cart</a>
+	</div>
+	<br>
+
+
+
+	<table>
+  		<tr>
+    		<td>Name:</td>
+   			<td>Description</td>
+   			<td>Image:</td>
+   			<td>Price:</td>
+   			<td>quantity:</td>
+   			<td>Add</td>
+   		</tr>
+  		<?php
+
+  		//grab from pssql to table
 		$stmt = $db->prepare('SELECT * FROM Artwork');
 		$stmt->execute();
 		$rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -74,29 +100,7 @@ catch (PDOException $ex)
 		echo '</pre>';*/
 
 
-?>
-	<h1>Gallery</h1>
-	<br>
 
-	<div class="navbar">
-		<a href="main.php">Login</a>
-  		<a href="menu.php">Gallery</a>
-  		<a href="cart.php">Cart</a>
-	</div>
-	<br>
-
-
-
-	<table>
-  		<tr>
-    		<td>Name:</td>
-   			<td>Description</td>
-   			<td>Image:</td>
-   			<td>Price:</td>
-   			<td>quantity:</td>
-   			<td>Add</td>
-   		</tr>
-  		<?php
 		foreach($rows as $table){
 			$image = "artWorkImages/" . $table['linktoart'];
 			$id = $table['artwork_id'];
