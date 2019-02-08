@@ -29,8 +29,9 @@ try
 
   	
   	$user = $_SESSION["sessionUserName"];
+
 	//find the user in the DB
-	$stmt = $db->prepare('SELECT userName FROM Customer WHERE Customer.userName=:id');
+	$stmt = $db->prepare('SELECT * FROM Customer WHERE userName=:id');
 	$stmt->bindValue(':id', $user, PDO::PARAM_INT);
 	$stmt->execute();
 	$note_rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
