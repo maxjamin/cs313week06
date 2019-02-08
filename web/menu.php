@@ -106,7 +106,8 @@ catch (PDOException $ex)
 			$quantity = $_SESSION[$names . 'amount'];
 			$tableQuantiy = $table['quantity'] - $quantity;
 
-			echo '<tr><td>' .  $table['name'] .
+			if($tableQuantiy > 0) {
+				echo '<tr><td>' .  $table['name'] .
 				"</td><td>" . $table['description'] .
 				"</td><td>" . "<img src=$image width='150' height='150'>" .
 				"</td><td>" . $table['price'] .
@@ -121,6 +122,8 @@ catch (PDOException $ex)
 
 				<?php 
 				echo '</td></tr>';
+			}
+
 		} ?>
 
 	</table>
