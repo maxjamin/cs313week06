@@ -28,7 +28,7 @@ try
   	$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
   	
-  	$user = $_SESSION["sessionUserName"];
+  	/*$user = $_SESSION["sessionUserName"];
 	//find the user in the DB
 	$stmt = $db->prepare('SELECT userName FROM Customer WHERE Customer.userName=:id');
 	$stmt->bindValue(':id', $user, PDO::PARAM_INT);
@@ -36,7 +36,7 @@ try
 	$note_rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 	echo . 'Answer ' . $note_rows;
 
-		
+		*/
 
 
 
