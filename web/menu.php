@@ -100,7 +100,8 @@ catch (PDOException $ex)
 			$names = $table['name'];
 			//"<img src='artWorkImages/weather.jpeg' >"
 
-			echo $_SESSION[$amount];
+			$quantity = $_SESSION[$names . 'amount'];
+			echo $quantity . ' ';
 
 			echo '<tr><td>' .  $table['name'] .
 				"</td><td>" . $table['description'] .
