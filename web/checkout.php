@@ -27,6 +27,19 @@ try
  	$db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
   	$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
+  	
+  	$user = $_SESSION["sessionUserName"]
+	//find the user in the DB
+	$stmt = $db->prepare('SELECT userName FROM Customer WHERE Customer.userName=:id');
+	$stmt->bindValue(':id', $user, PDO::PARAM_INT);
+	$stmt->execute();
+	$note_rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+	echo . 'Answer ' . note_rows;
+
+		
+
+
+
 }
 catch (PDOException $ex)
 {
