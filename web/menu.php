@@ -76,7 +76,7 @@ catch (PDOException $ex)
 		$amount = $_POST["output"] . 'amount';
 		
 
-		if(!filter_var($_POST["search"], FILTER_VALIDATE_INT) === false) {
+		if(filter_var($_POST["search"])) {
 
 			if($_SESSION[$_POST["output"]] !== $_POST["search"])
 			{
