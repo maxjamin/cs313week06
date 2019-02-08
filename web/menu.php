@@ -93,6 +93,7 @@ catch (PDOException $ex)
    			<td>Description</td>
    			<td>Image:</td>
    			<td>Price:</td>
+   			<td>quantity:</td>
    			<td>Add</td>
    		</tr>
   		<?php
