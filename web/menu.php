@@ -78,26 +78,19 @@ catch (PDOException $ex)
 
 		if(!filter_var($_POST["search"], FILTER_VALIDATE_INT) === false) {
 
-			//echo "TEST<br>";
 			if($_SESSION[$_POST["output"]] !== $_POST["search"])
 			{
-				//echo "TEST01";
 				$_SESSION[$amount] = 1;
 				$_SESSION[$_POST["output"]] = $_POST["search"];
 			}
 			else
 			{
-				//echo "TEST02";
 				$tempVar = $_SESSION[$amount];
 				$tempVar = $tempVar +1;
 				$_SESSION[$amount] = $tempVar;
 			}
 
 		}
-
-		/*echo '<pre>';
-		var_dump($_SESSION);
-		echo '</pre>';*/
 
 
 
@@ -107,11 +100,13 @@ catch (PDOException $ex)
 			$names = $table['name'];
 			//"<img src='artWorkImages/weather.jpeg' >"
 
+			echo $_SESSION[$amount];
+
 			echo '<tr><td>' .  $table['name'] .
 				"</td><td>" . $table['description'] .
 				"</td><td>" . "<img src=$image width='150' height='150'>" .
 				"</td><td>" . $table['price'] .
-				"</td><td>" . $table['quantity'] .
+				"</td><td>" . $table['quantity']  .
 				"</td><td>";
 				?>
 				<form id = "table" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
