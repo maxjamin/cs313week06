@@ -34,7 +34,7 @@ try
 	$stmt->bindValue(':id', $user, PDO::PARAM_INT);
 	$stmt->execute();
 	$note_rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-	echo . 'Answer ' . note_rows;
+	echo . 'Answer ' . $note_rows;
 
 		
 
