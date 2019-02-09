@@ -35,7 +35,6 @@ catch (PDOException $ex)
   die();
 }
  
-
   	//destroy the sessions
   	session_unset();
   	session_destroy();
