@@ -79,12 +79,6 @@
 
 	}
 
-			function logout() {
-			// remove all session variables
-			session_unset();
-			session_destroy(); 
-		}
-
 ?>
 	<h1>05 Prove</h1>
 	<br>
@@ -105,13 +99,19 @@
 			echo "User: " . $_SESSION["sessionUserName"] . '<br>';
 			echo "User Email: " . $_SESSION["sessionUserEmail"] . '<br><br>';
 		}
+
+		if($_GET['button1']){logoutOne();}
+		function logoutOne()
+ 		{
+   			session_unset();	
+			session_destroy();
+ 		}
+
 	?>
 
-	<form action="logout()">
-			<input type="submit" name="entered" value="Logout">
-	</form>
-
 	<p>Default User: maxer, Password:password </p>
+
+	<button id="btn1" name="btn1" onClick='location.href="?button1=1"'>Update to 1</button>
 
 	<?php if($_SESSION["table"] !== 'false') { ?>
 
