@@ -92,10 +92,10 @@ catch (PDOException $ex)
 
 		}
 
-		echo '<pre>';
+		/*echo '<pre>';
 			var_dump($_SESSION);
 		echo '</pre>';	
-
+		*/
 
 
 		foreach($rows as $table){
