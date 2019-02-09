@@ -76,7 +76,7 @@
 					//Update Artwork table to reflect the purchase 
 					$newArtQuantity = $table['quantity'] - $_SESSION[$ouputAmount];
 
-					$srr = $db->prepare('UPDATE Artwork SET quantity= newArtQuantity WHERE $table["artwork_id"] = $_SESSION[$table["name"]]');
+					$srr = $db->prepare('UPDATE Artwork SET quantity= $newArtQuantity WHERE $table["artwork_id"] = $_SESSION[$table["name"]]');
 					$srr->execute();
 
 				}
