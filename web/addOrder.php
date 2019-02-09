@@ -61,7 +61,7 @@
 				if($_SESSION[$table['name']] == $table['artwork_id']) {
 
 					$ouputAmount = $table["name"] . 'amount';
-					echo $table['name'] . " " . $_SESSION[$ouputAmount] . $newId;
+					echo $table['artwork_id'] . " " . $_SESSION[$ouputAmount] . $newId;
 					
 
 
