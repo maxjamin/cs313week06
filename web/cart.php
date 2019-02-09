@@ -51,7 +51,6 @@ catch (PDOException $ex)
 	 		<?php 
 	 		}}?>
 		</div>
-		<hr>
 
 	<?php
 		if($_SESSION["sessionUserName"]) {
@@ -76,7 +75,7 @@ catch (PDOException $ex)
 
 	?>	
 
-		<br>
+		<br><br>
 		<table>
   		<tr>
     		<td>Name:</td>
