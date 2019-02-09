@@ -100,12 +100,17 @@
 			echo "User Email: " . $_SESSION["sessionUserEmail"] . '<br><br>';
 		}
 
+
 		function logout() {
 			// remove all session variables
 			session_unset();
 			session_destroy(); 
 		}
 	?>
+	
+	<form action="logout()">
+			<input type="submit" name="entered" value="Logout">
+	</form>
 
 	<p>Default User: maxer, Password:password </p>
 
@@ -124,10 +129,6 @@
 	    		<span class="addUser"><a href="addUser.php"</a>Add User</span>
 	  		</div>
 	  	</form>
-		<form action="logout()">
-			<input type="submit" name="entered" value="Logout">
-		</form>
-
 		
 	<?php } ?>
 
