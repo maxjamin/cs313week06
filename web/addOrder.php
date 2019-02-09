@@ -46,10 +46,10 @@
 		echo $rows[0]["username"] ." " . $rows[0]["user_id"];
 		$userId = $rows[0]["user_id"];
 
-		$stmt = $db->prepare('INSERT INTO Orders(address, user_id) VALUES (:address :userId);');
-		$stmt->bindValue(':userId', $userId, PDO::PARAM_STR);
-		$stmt->bindValue(':address', $addressId, PDO::PARAM_STR);
-		$stmt->execute();
+		$stt = $db->prepare('INSERT INTO Orders(address, user_id) VALUES (:address :userId);');
+		$stt->bindValue(':userId', $userId, PDO::PARAM_STR);
+		$stt->bindValue(':address', $addressId, PDO::PARAM_STR);
+		$stt->execute();
 
 
 	}
