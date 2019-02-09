@@ -48,6 +48,8 @@
 			$stt->execute();
 
 
+			$newId = $pdo->lastInsertId('Orders_order_id_seq');
+
 			//Add OrderItems items to table
 			$stmt = $db->prepare('SELECT * FROM Artwork');
 			$stmt->execute();
@@ -58,10 +60,9 @@
 				if($_SESSION[$table['name']] == $table['artwork_id']) {
 
 					$ouputAmount = $table["name"] . 'amount';
-					$newId = $pdo->lastInsertId('Orders_order_id_seq');
 
 
-					echo $table['name'] . " " . $_SESSION[$ouputAmount] . $newId;
+					echo $table['name'] . " " . $_SESSION[$ouputAmount];
 
 
 				}
