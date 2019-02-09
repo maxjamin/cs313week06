@@ -40,7 +40,7 @@ catch (PDOException $ex)
   	session_destroy();
 
 ?>
-	<h1>Cart</h1>
+	<h1>Thank you for your purchase!</h1>
 	<br>
 
 	<div class="navbar">

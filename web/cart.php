@@ -42,7 +42,11 @@ catch (PDOException $ex)
 		<a href="main.php">Login</a>
   		<a href="menu.php">Gallery</a>
   		<a href="cart.php">Cart</a>
- 		<a href="checkout.php">Checkout</a> 
+  		<?php
+		if($_SESSION["sessionUserName"]) {?>
+ 			<a href="checkout.php">Checkout</a>
+ 		<?php 
+ 		}?>
 	</div>
 	<br>
 
