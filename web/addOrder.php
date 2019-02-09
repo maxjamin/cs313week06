@@ -40,8 +40,8 @@
 			echo $rows[0]["username"] ." " . $rows[0]["user_id"];
 			$userId = $rows[0]["user_id"];
 
-			$stt = $db->prepare('INSERT INTO Orders(address, user_id, zip, state) VALUES (:address, :userId, :zipId, :stateId);');
-			$stt->bindValue(':address', $address, PDO::PARAM_STR);
+			$stt = $db->prepare('INSERT INTO Orders(address, user_id, zip, state) VALUES (:addressId, :userId, :zipId, :stateId);');
+			$stt->bindValue(':addressId', $address, PDO::PARAM_STR);
 			$stt->bindValue(':zipId', $zip, PDO::PARAM_STR);
 			$stt->bindValue(':stateId', $state, PDO::PARAM_STR);
 			$stt->bindValue(':userId', $userId, PDO::PARAM_INT);
