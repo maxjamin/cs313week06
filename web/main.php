@@ -120,8 +120,13 @@
 	  		</div>
 	  	</form>
 		
-	<?php } ?>
+	<?php } 
+
+	else {
+	?>
 	<span class="addUser"><a href="logout.php"</a>Log Out</span>
+	<?php } ?>
+
 
 
 </body>
