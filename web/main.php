@@ -99,6 +99,12 @@
 			echo "User: " . $_SESSION["sessionUserName"] . '<br>';
 			echo "User Email: " . $_SESSION["sessionUserEmail"] . '<br><br>';
 		}
+
+		function logout() {
+			// remove all session variables
+			session_unset();
+			session_destroy(); 
+		}
 	?>
 
 	<p>Default User: maxer, Password:password </p>
@@ -117,6 +123,10 @@
 	    		<span class="passwordF">Forgot <a href="#">password?</a></span><br><br>
 	    		<span class="addUser"><a href="addUser.php"</a>Add User</span>
 	  		</div>
+		</form action="logout()">
+			<input type="submit" name="entered" value="Logout">
+		<form>
+
 		</form>
 	<?php } ?>
 
