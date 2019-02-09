@@ -103,10 +103,10 @@
 	}
 
 
-	/*$new_page = "main.php";
+	$new_page = "afterCheckout.php";
 	header("Location: $new_page");
 	die();
-*/
+
 	
 
 
