@@ -43,11 +43,11 @@ catch (PDOException $ex)
   		<a href="menu.php">Gallery</a>
   		<a href="cart.php">Cart</a>
   		<?php
-  		function displayCheckout() {
+  		//function displayCheckout() {
 		if($_SESSION["addedToCart"] == 1) {?>
- 			<a class="navbar" href="checkout.php">Checkout</a>
+ 			<a href="checkout.php">Checkout</a>
  		<?php 
- 		} }?>
+ 		} ?>
 	</div>
 	<br>
 
@@ -116,7 +116,7 @@ catch (PDOException $ex)
 
 				
 		}
-		displayCheckout();
+		//displayCheckout();
 		
 		?>
 		</table>
