@@ -84,11 +84,12 @@ catch (PDOException $ex)
    			<td>Add</td>
    		</tr>
   		<?php
+  		
+  		$checkCart=0;
 		foreach($rows as $table){
 			$image = "artWorkImages/" . $table['linktoart'];
 			$id = $table['artwork_id'];
 			$names = $table['name'];
-			$checkCart=0;
 			
 			if( $_SESSION[$table['name']] == $table['artwork_id'])
 			{
