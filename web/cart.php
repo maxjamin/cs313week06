@@ -49,10 +49,11 @@ catch (PDOException $ex)
 			if($_SESSION["addedToCart"] == 1) {?>
 	 			<a href="checkout.php">Checkout</a>
 	 		<?php 
-	 		}}?>
+	 		}?>
 		</div>
 
 	<?php
+	}
 		if($_SESSION["sessionUserName"]) {
 			echo "User: " . $_SESSION["sessionUserName"] . '<br>';
 			echo "User Email: " . $_SESSION["sessionUserEmail"] . '<br><br>';
@@ -75,7 +76,7 @@ catch (PDOException $ex)
 
 	?>	
 
-		<br><br>
+		<br>
 		<table>
   		<tr>
     		<td>Name:</td>
