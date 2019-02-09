@@ -77,9 +77,10 @@
 					$newArtQuantity = $table['quantity'] - $_SESSION[$ouputAmount];
 
 
-					$sql = 'Update Artwork SET quantity = :newArt WHERE artwork_id = $_SESSION[$table['name']';
+					$sql = "Update Artwork SET quantity = :newArt WHERE artwork_id = :user";
 					$srr = $db->prepare($sql);
-					$stt->bindValue(':newArt', $newArtQuantity, PDO::PARAM_INT);
+					$stt->bindValue(':user',$_SESSION[$table['name'], PDO::PARAM_INT);
+					$stt->bindValue(':newArt',$newArtQuantity, PDO::PARAM_INT);
 					$srr->execute();
 
 				}
