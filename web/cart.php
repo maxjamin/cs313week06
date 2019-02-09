@@ -42,7 +42,11 @@ catch (PDOException $ex)
 		<a href="main.php">Login</a>
   		<a href="menu.php">Gallery</a>
   		<a href="cart.php">Cart</a>
+  		<?php
+		if($_SESSION["addedToCart"]) {?>
  		<a href="checkout.php">Checkout</a>
+ 		<?php 
+ 		}?>
 	</div>
 	<br>
 
@@ -84,9 +88,12 @@ catch (PDOException $ex)
 			$image = "artWorkImages/" . $table['linktoart'];
 			$id = $table['artwork_id'];
 			$names = $table['name'];
+			$checkCart = 0;
 			
 			if( $_SESSION[$table['name']] == $table['artwork_id'])
 			{
+				$checkCart=1;
+
 				$productName = $table['name'];
 				echo '<tr><td>' . $table['name'] .
 				"</td><td>" . $table['description'] .
@@ -104,9 +111,12 @@ catch (PDOException $ex)
 				<?php 
 				echo '</td></tr>';
 
-			}
+			} 
 
 				
+		}
+		if($checkout != 0){
+			$_SESSION["addedToCart"] = 1;
 		}
 
 		?>
