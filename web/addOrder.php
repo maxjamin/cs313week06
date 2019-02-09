@@ -49,6 +49,21 @@
 			$stt->execute();
 
 
+			//Add OrderItems items to table
+			$stmt = $db->prepare('SELECT * FROM Artwork');
+			$stmt->execute();
+			$rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+			foreach($rows as $table){
+					
+				if(_SESSION[$table['name']] == $table['artwork_id']) {
+					echo $table['name'] . " ";  
+				}
+
+			}
+
+
+
 		}
 		else{
 			echo "Error: User not found<br>";
