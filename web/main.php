@@ -85,8 +85,12 @@
 
 	<div class="navbar">
 		<a href="main.php">Login</a>
+		  		<?php
+		if($_SESSION["sessionUserName"]) {?>
   		<a href="menu.php">Gallery</a>
   		<a href="cart.php">Cart</a>
+  		<?php 
+ 		}?>
 	</div>
 	<br>
 
