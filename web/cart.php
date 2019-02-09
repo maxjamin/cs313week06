@@ -116,6 +116,7 @@ catch (PDOException $ex)
 				
 		}
 		if($checkout == 1){
+			echo "CHECKOUT " . $checkCart;
 			$_SESSION["addedToCart"] = 1;
 		}
 
