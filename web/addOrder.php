@@ -58,11 +58,11 @@
 				if($_SESSION[$table['name']] == $table['artwork_id']) {
 
 					$ouputAmount = $table["name"] . 'amount';
-					$newId = $pdo->lastInsertId(Orders_order_id);
+					$newId = $pdo->lastInsertId(Orders);
 
 
 					echo $table['name'] . " " . $_SESSION[$ouputAmount] 
-					. $newId;
+					. $newId['order_id'];
 
 
 				}
