@@ -49,12 +49,11 @@ catch (PDOException $ex)
 	<br>
 
 	<form id = "table" method="post" action="<?php echo htmlspecialchars("addOrder.php");?>">
-			Address:<input type="text" placeholder="Enter address" name="userNameEntered">
-			Zip:<input type="password" placeholder="State" name="passwordEntered">
-			State:<input type="password" placeholder="State" name="passwordEntered">
+			Address:<input type="text" placeholder="Enter address" name="addressEntered"><br>
+			Zip:<input type="text" placeholder="State" name="zipEntered"><br>
+			State:<input type="text" placeholder="State" name="stateEntered"><br>
 			<input type="submit" name="entered" value="submit">
 		
-
 	</form>
 
 
