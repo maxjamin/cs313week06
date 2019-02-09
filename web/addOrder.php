@@ -34,6 +34,7 @@
 		$rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 
+
 		//Add the user_id into the Order table
 		if($rows[0]["username"])
 		{
