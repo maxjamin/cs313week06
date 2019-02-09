@@ -25,7 +25,7 @@
 	  	$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 
-	  		echo $sessionUser . ' ' . $adress . $zip . $state;
+	  		echo'ADDRESS IS: ' . $adress;
 
 		//check to see if the user_id matches the session id of the user
 		$stmt = $db->prepare('SELECT * FROM Customer WHERE userName=:sessionUser');
@@ -42,7 +42,7 @@
 			$userId = $rows[0]["user_id"];
 
 			$stt = $db->prepare('INSERT INTO Orders(address, user_id, zip, state) VALUES (:addressId, :userId, :zipId, :stateId);');
-			$stt->bindValue(':addressId', $address, PDO::PARAM_STR);
+			$stt->bindValue(':addressId', $adress, PDO::PARAM_STR);
 			$stt->bindValue(':zipId', $zip, PDO::PARAM_STR);
 			$stt->bindValue(':stateId', $state, PDO::PARAM_STR);
 			$stt->bindValue(':userId', $userId, PDO::PARAM_INT);
