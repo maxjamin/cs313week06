@@ -68,12 +68,6 @@ catch (PDOException $ex)
 		$ouputAmount = $_POST["output"] . 'amount';
 		$_SESSION[$ouputAmount] = "";
 		$_SESSION[$_POST['output']] = "";
-
-		//print sessions vars 
-		/*echo '<pre>';
-			var_dump($_SESSION);
-		echo '</pre>';	*/	
-
 	?>	
 
 		<br>

@@ -100,18 +100,9 @@
 			echo "User Email: " . $_SESSION["sessionUserEmail"] . '<br><br>';
 		}
 
-		if($_GET['button1']){logoutOne();}
-		function logoutOne()
- 		{
-   			session_unset();	
-			session_destroy();
- 		}
-
 	?>
 
 	<p>Default User: maxer, Password:password </p>
-
-	<button id="btn1" name="btn1" onClick='location.href="?button1=1"'>Update to 1</button>
 
 	<?php if($_SESSION["table"] !== 'false') { ?>
 
@@ -126,6 +117,7 @@
 			<div class="container" style="background-color:#f1f1f1">
 	    		<span class="passwordF">Forgot <a href="#">password?</a></span><br><br>
 	    		<span class="addUser"><a href="addUser.php"</a>Add User</span>
+	    		<span class="addUser"><a href="logout.php"</a>Log Out</span>
 	  		</div>
 	  	</form>
 		
