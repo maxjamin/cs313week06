@@ -79,6 +79,12 @@
 
 	}
 
+			function logout() {
+			// remove all session variables
+			session_unset();
+			session_destroy(); 
+		}
+
 ?>
 	<h1>05 Prove</h1>
 	<br>
@@ -99,15 +105,8 @@
 			echo "User: " . $_SESSION["sessionUserName"] . '<br>';
 			echo "User Email: " . $_SESSION["sessionUserEmail"] . '<br><br>';
 		}
-
-
-		function logout() {
-			// remove all session variables
-			session_unset();
-			session_destroy(); 
-		}
 	?>
-	
+
 	<form action="logout()">
 			<input type="submit" name="entered" value="Logout">
 	</form>
