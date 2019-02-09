@@ -48,13 +48,12 @@
 			$stt->bindValue(':userId', $userId, PDO::PARAM_INT);
 			$stt->execute();
 
-			$newId = $pdo->lastInsertId('Orders_zip_seq');
-
 
 			//Add OrderItems items to table
 			$stmt = $db->prepare('SELECT * FROM Artwork');
 			$stmt->execute();
 			$rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+			$newId = $db->lastInsertId('Orders_order_id_seq');
 
 			foreach($rows as $table){
 					
