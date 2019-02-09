@@ -117,11 +117,11 @@
 			<div class="container" style="background-color:#f1f1f1">
 	    		<span class="passwordF">Forgot <a href="#">password?</a></span><br><br>
 	    		<span class="addUser"><a href="addUser.php"</a>Add User</span>
-	    		<span class="addUser"><a href="logout.php"</a>Log Out</span>
 	  		</div>
 	  	</form>
 		
 	<?php } ?>
+	<span class="addUser"><a href="logout.php"</a>Log Out</span>
 
 
 </body>
