@@ -25,7 +25,7 @@
 	  	$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 
-	  		//echo'ADDRESS IS: ' . $adress;
+	  		echo'ADDRESS IS: ' . $adress;
 
 		//check to see if the user_id matches the session id of the user
 		$stmt = $db->prepare('SELECT * FROM Customer WHERE userName=:sessionUser');
