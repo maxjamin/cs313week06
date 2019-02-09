@@ -48,6 +48,7 @@
 			$stt->bindValue(':userId', $userId, PDO::PARAM_INT);
 			$stt->execute();
 
+			$newId = $pdo->lastInsertId('Orders_order_id_seq');
 
 			//Add OrderItems items to table
 			$stmt = $db->prepare('SELECT * FROM Artwork');
@@ -61,7 +62,9 @@
 					$ouputAmount = $table["name"] . 'amount';
 
 
+
 					echo $table['name'] . " " . $_SESSION[$ouputAmount];
+					echo $newId;
 
 
 				}
