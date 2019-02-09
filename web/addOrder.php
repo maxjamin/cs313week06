@@ -57,7 +57,13 @@
 			foreach($rows as $table){
 					
 				if($_SESSION[$table['name']] == $table['artwork_id']) {
-					echo $table['name'] . " ";  
+
+					$ouputAmount = $table["name"] . 'amount';
+
+
+					echo $table['name'] . " " . $_SESSION[$ouputAmount];
+
+					$  
 				}
 
 			}
