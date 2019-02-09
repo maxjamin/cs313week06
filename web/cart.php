@@ -44,7 +44,7 @@ catch (PDOException $ex)
   		<a href="menu.php">Gallery</a>
   		<a href="cart.php">Cart</a>
   		<?php
-		if($_SESSION["addedToCart"] == "1") {?>
+		if($_SESSION["addedToCart"] == "0") {?>
  		<a href="checkout.php">Checkout</a>
  		<?php 
  		}?>
