@@ -35,7 +35,7 @@
 
 
 
-		//Add the user_id into the Order table
+		//If that user exists then.. 
 		if($rows[0]["username"])
 		{
 			//echo $rows[0]["username"] ." " . $rows[0]["user_id"];
@@ -54,10 +54,12 @@
 			$stmt->execute();
 			$rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
+			//grab order_id from Last Order
 			$newId = $db->lastInsertId('Orders_order_id_seq');
 
 			foreach($rows as $table){
-					
+
+				//check to see if user saved artwork to session	
 				if($_SESSION[$table['name']] == $table['artwork_id']) {
 
 					$ouputAmount = $table["name"] . 'amount';
@@ -69,6 +71,13 @@
 					$stt->bindValue(':artId', $table['artwork_id'], PDO::PARAM_INT);
 					$stt->bindValue(':orderId', $newId, PDO::PARAM_INT);
 					$stt->execute();
+
+
+					//Update Artwork table to reflect the purchase 
+					$newArtQuantity = $table['quantity'] - $_SESSION[$ouputAmount];
+
+					$srr = $db->prepare('UPDATE Artwork SET quantity= newArtQuantity WHERE $table["artwork_id"] = $_SESSION[$table["name"]]');
+					$srr->execute();
 
 				}
 
@@ -90,6 +99,10 @@
 	}
 
 
+	/*$new_page = "main.php";
+	header("Location: $new_page");
+	die();
+*/
 	
 
 
