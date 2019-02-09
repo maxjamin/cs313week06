@@ -76,7 +76,7 @@ catch (PDOException $ex)
 
 	?>	
 
-
+		<br>
 		<table>
   		<tr>
     		<td>Name:</td>
