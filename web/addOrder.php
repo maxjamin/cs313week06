@@ -32,7 +32,8 @@
 	echo $sessionUser . ' ' . $adress . $zip . $state;
 
 
-	$stmt = $db->prepare('SELECT * FROM Customer WHERE userName=$sessionUser');
+	$stmt = $db->prepare('SELECT * FROM Customer WHERE userName=:sessionUser');
+	$stmt->bindValue(':sessionUser', $sessionUser, PDO::PARAM_STR);
 	$stmt->execute();
 	$rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
