@@ -53,6 +53,7 @@
 			$stmt = $db->prepare('SELECT * FROM Artwork');
 			$stmt->execute();
 			$rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
 			$newId = $db->lastInsertId('Orders_order_id_seq');
 
 			foreach($rows as $table){
@@ -60,7 +61,7 @@
 				if($_SESSION[$table['name']] == $table['artwork_id']) {
 
 					$ouputAmount = $table["name"] . 'amount';
-					echo $table['name'] . " " . $_SESSION[$ouputAmount];
+					echo $table['name'] . " " . $_SESSION[$ouputAmount] . $newId;
 					
 
 
