@@ -48,11 +48,10 @@ catch (PDOException $ex)
 	</div>
 	<br>
 
-	<form id = "table" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-			UserName:<input type="text" placeholder="Enter address" name="userNameEntered">
-			<span class="error"><?php echo $nameError;?></span><br>
-			Password:<input type="password" placeholder="State" name="passwordEntered">
-			<span class="error"><?php echo $passError;?></span><br>
+	<form id = "table" method="post" action="<?php echo htmlspecialchars("addOrder.php");?>">
+			Address:<input type="text" placeholder="Enter address" name="userNameEntered">
+			Zip:<input type="password" placeholder="State" name="passwordEntered">
+			State:<input type="password" placeholder="State" name="passwordEntered">
 			<input type="submit" name="entered" value="submit">
 		
 

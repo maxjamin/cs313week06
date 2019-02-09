@@ -33,16 +33,8 @@ catch (PDOException $ex)
   echo 'Error!: ' . $ex->getMessage();
   die();
 }
-
-		//grab from session to display user
-		if($_SESSION["sessionUserName"]) {
-			echo "User: " . $_SESSION["sessionUserName"] . '<br>';
-			echo "User Email: " . $_SESSION["sessionUserEmail"] . '<br><br>';
-		}
-
-
-
 ?>
+
 	<h1>Gallery</h1>
 	<br>
 
@@ -53,6 +45,14 @@ catch (PDOException $ex)
 	</div>
 	<br>
 
+<?php 
+		//grab from session to display user
+		if($_SESSION["sessionUserName"]) {
+			echo "User: " . $_SESSION["sessionUserName"] . '<br>';
+			echo "User Email: " . $_SESSION["sessionUserEmail"] . '<br><br>';
+		}
+
+?>
 
 
 	<table>
