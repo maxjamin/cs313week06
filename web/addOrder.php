@@ -61,7 +61,7 @@
 					$newId = $pdo->lastInsertId('Orders_order_id_seq');
 
 
-					echo $table['name'] . " " . $_SESSION[$ouputAmount] . $newId['order_id'];
+					echo $table['name'] . " " . $_SESSION[$ouputAmount] . $newId;
 
 
 				}
