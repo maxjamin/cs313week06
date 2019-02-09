@@ -25,7 +25,7 @@
 	  	$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 
-	  		echo'ADDRESS IS: ' . $adress;
+	  		echo'ADDRESS IS: ' . $adress . '<br>';
 
 		//check to see if the user_id matches the session id of the user
 		$stmt = $db->prepare('SELECT * FROM Customer WHERE userName=:sessionUser');
@@ -63,8 +63,12 @@
 					$ouputAmount = $table["name"] . 'amount';
 
 					echo $table['artwork_id'] . " " . $_SESSION[$ouputAmount] . " " . $newId . '<br>';
-					
 
+					$stt = $db->prepare('INSERT INTO OrderItems(quantity, artwork_id, order_id) VALUES (:quantityId, :artId, :orderId);');
+					$stt->bindValue(':quantityId', $_SESSION[$ouputAmount], PDO::PARAM_INT);
+					$stt->bindValue(':artId', $table['artwork_id'], PDO::PARAM_INT);
+					$stt->bindValue(':orderId', $newId, PDO::PARAM_INT);
+					$stt->execute();
 
 				}
 
