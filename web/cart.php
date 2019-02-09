@@ -1,7 +1,7 @@
 <?php	
 	//Starting session
 	session_start();
-	$checkCart=0;
+	$_SESSION["addedToCart"] = "0";
 ?>
 <!DOCTYPE html>
 <html>
@@ -44,7 +44,7 @@ catch (PDOException $ex)
   		<a href="menu.php">Gallery</a>
   		<a href="cart.php">Cart</a>
   		<?php
-		if($_SESSION["addedToCart"] == 1) {?>
+		if($_SESSION["addedToCart"] == "1") {?>
  		<a href="checkout.php">Checkout</a>
  		<?php 
  		}?>
@@ -93,7 +93,7 @@ catch (PDOException $ex)
 			
 			if( $_SESSION[$table['name']] == $table['artwork_id'])
 			{
-				$checkCart=1;
+				$_SESSION["addedToCart"] = "1";
 
 				$productName = $table['name'];
 				echo '<tr><td>' . $table['name'] .
@@ -116,12 +116,7 @@ catch (PDOException $ex)
 
 				
 		}
-		echo "CHECKOUT " . $checkCart;
-		if($checkout === 1){
-			echo "TEST01";
-			$_SESSION["addedToCart"] = 1;
-		}
-
+		
 		?>
 		</table>
 
