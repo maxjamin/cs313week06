@@ -36,7 +36,7 @@
 	$stmt->execute();
 	$rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-	echo $rows;
+	echo $rows['userName'] . " " . $rows['user_id'];
 
 
 ?>
