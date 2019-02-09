@@ -38,6 +38,7 @@
 		//Add the user_id into the Order table
 		if($rows[0]["username"])
 		{
+			//echo $rows[0]["username"] ." " . $rows[0]["user_id"];
 			$userId = $rows[0]["user_id"];
 
 			$stt = $db->prepare('INSERT INTO Orders(address, user_id, zip, state) VALUES (:addressId, :userId, :zipId, :stateId);');
@@ -47,8 +48,6 @@
 			$stt->bindValue(':userId', $userId, PDO::PARAM_INT);
 			$stt->execute();
 
-
-			$newId = $pdo->lastInsertId('Orders_order_id_seq');
 
 			//Add OrderItems items to table
 			$stmt = $db->prepare('SELECT * FROM Artwork');
