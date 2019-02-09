@@ -48,7 +48,7 @@
 			$stt->bindValue(':userId', $userId, PDO::PARAM_INT);
 			$stt->execute();
 
-			$newId = $pdo->lastInsertId('Orders_order_id_seq');
+			$newId = $pdo->lastInsertId('Orders_zip_seq');
 
 
 			//Add OrderItems items to table
