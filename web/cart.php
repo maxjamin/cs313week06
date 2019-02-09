@@ -38,18 +38,20 @@ catch (PDOException $ex)
 	<h1>Cart</h1>
 	<br>
 
-	<div class="navbar">
-		<a href="main.php">Login</a>
-  		<a href="menu.php">Gallery</a>
-  		<a href="cart.php">Cart</a>
-  		<?php
-  		//function displayCheckout() {
-		if($_SESSION["addedToCart"] == 1) {?>
- 			<a href="checkout.php">Checkout</a>
- 		<?php 
- 		} ?>
-	</div>
-	<br>
+	<?php	
+  	function displayCheckout() { ?>
+
+		<div class="navbar">
+			<a href="main.php">Login</a>
+	  		<a href="menu.php">Gallery</a>
+	  		<a href="cart.php">Cart</a>
+	  		<?php
+			if($_SESSION["addedToCart"] == 1) {?>
+	 			<a href="checkout.php">Checkout</a>
+	 		<?php 
+	 		}}?>
+		</div>
+		<br>
 
 	<?php
 		if($_SESSION["sessionUserName"]) {
@@ -116,7 +118,7 @@ catch (PDOException $ex)
 
 				
 		}
-		//displayCheckout();
+		displayCheckout();
 		
 		?>
 		</table>
