@@ -49,8 +49,5 @@ catch (PDOException $ex)
 	<br>
 
 
-
-
-
 </body>
 </html> 
