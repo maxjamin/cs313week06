@@ -6,6 +6,7 @@
 	$adress = htmlspecialchars($_POST['addressEntered']);
 	$zip = htmlspecialchars($_POST['zipEntered']);
 	$state = htmlspecialchars($_POST['stateEntered']);
+	$sessionUser = $_SESSION["sessionUserName"];
 
 	try
 	{
@@ -28,8 +29,12 @@
 	  die();
 	}
 
-	echo $_SESSION["sessionUserName"] . ' ' . $adress . $zip . $state;
+	echo $sessionUser . ' ' . $adress . $zip . $state;
 
+
+	$stmt = $db->prepare('SELECT * FROM Customer WHERE userName=$sessionUser');
+	$stmt->execute();
+	$rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 
 
