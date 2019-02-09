@@ -1,5 +1,8 @@
 <?php 
 
+	//Starting session
+	session_start();
+
 	$adress = htmlspecialchars($_POST['addressEntered']);
 	$zip = htmlspecialchars($_POST['zipEntered']);
 	$state = htmlspecialchars($_POST['stateEntered']);
@@ -24,6 +27,12 @@
 	  echo 'Error!: ' . $ex->getMessage();
 	  die();
 	}
+
+	echo $_SESSION["sessionUserName"] . ' ' . $adress . $zip . $state;
+
+
+
+
 
 
 ?>
