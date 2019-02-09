@@ -63,7 +63,6 @@
 
 					echo $table['name'] . " " . $_SESSION[$ouputAmount];
 
-					$  
 				}
 
 			}
