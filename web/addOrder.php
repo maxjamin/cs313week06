@@ -76,8 +76,10 @@
 					//Update Artwork table to reflect the purchase 
 					$newArtQuantity = $table['quantity'] - $_SESSION[$ouputAmount];
 
-					$srr = $db->prepare('UPDATE Artwork (quantity) VALUES (:newArtQuantity);');
-					$stt->bindValue(':newArtQuantity', $newArtQuantity, PDO::PARAM_INT);
+
+					$sql = 'Update Artwork SET quantity = :newArt WHERE artwork_id = $_SESSION[$table['name']';
+					$srr = $db->prepare($sql);
+					$stt->bindValue(':newArt', $newArtQuantity, PDO::PARAM_INT);
 					$srr->execute();
 
 				}
