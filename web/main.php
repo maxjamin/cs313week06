@@ -123,11 +123,12 @@
 	    		<span class="passwordF">Forgot <a href="#">password?</a></span><br><br>
 	    		<span class="addUser"><a href="addUser.php"</a>Add User</span>
 	  		</div>
-		</form action="logout()">
+	  	</form>
+		<form action="logout()">
 			<input type="submit" name="entered" value="Logout">
-		<form>
-
 		</form>
+
+		
 	<?php } ?>
 
 
