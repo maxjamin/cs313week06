@@ -34,7 +34,7 @@ catch (PDOException $ex)
   echo 'Error!: ' . $ex->getMessage();
   die();
 }
-
+ 
 
   	//destroy the sessions
   	session_unset();
